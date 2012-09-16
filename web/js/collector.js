@@ -5,7 +5,7 @@ RecyclingDataCollector.prototype = {
   {
     var err;
     type = type || "recycle"; // default value "recycle"
-    weight = weight || parseFloat(prompt("Please enter weight:")); //prompt for weight if not passed in
+    weight = weight || parseFloat(prompt("Please enter " + type + " weight:")); //prompt for weight if not passed in
 
     if (isNaN(weight)) { //verify is number
       error("Please enter a number");
@@ -25,7 +25,7 @@ RecyclingDataCollector.prototype = {
       this.landfillWeight = weight;
       break;
     case "floor":
-      this.floor = parseInt(weight);
+      this.floorWeight = parseInt(weight);
       break;
     default:
       error("Cannot save result, data collection type is unknown");
@@ -55,9 +55,3 @@ function error(msg)
   console.error(msg); // let the developer know what happened
   alert(msg); // let the user know what happened
 }
-
-var collector = new RecyclingDataCollector();
-collector.collectWeight("recycle");
-collector.collectWeight("landfill");
-collector.collectWeight("floor");
-collector.saveToServer();
