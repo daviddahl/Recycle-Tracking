@@ -2,10 +2,8 @@
 
 <ul>
         
-        <li><a href="dresses.php" title="Dresses">Dresses</a></li>
-        <li><a href="tops.php" title="Tops">Tops</a></li>
-	<li><a href="bottoms.php" title="Bottoms">Bottoms</a></li>
-	<li><a href="accessories.php" title="Jewelry &amp; Handbags">Accessories</a>
+        <li><a href="reports.php" title="Reports">Reporting</a></li>
+        <li><a href="rank.php" title="Rank">Rank</a></li>
         </ul>
 
 </div>
