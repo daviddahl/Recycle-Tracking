@@ -5,7 +5,7 @@ RecyclingDataCollector.prototype = {
   {
     var err;
     type = type || "recycle"; // default value "recycle"
-    weight = weight || parseFloat(prompt("Please enter recycling weight:")); //prompt for weight if not passed in
+    weight = weight || parseFloat(prompt("Please enter weight:")); //prompt for weight if not passed in
 
     if (isNaN(weight)) { //verify is number
       error("Please enter a number");
