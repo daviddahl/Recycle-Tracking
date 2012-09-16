@@ -25,7 +25,7 @@ RecyclingDataCollector.prototype = {
       this.landfillWeight = weight;
       break;
     case "floor":
-      this.floorWeight = parseInt(weight);
+      this.floor = parseInt(weight);
       break;
     default:
       error("Cannot save result, data collection type is unknown");
@@ -33,15 +33,19 @@ RecyclingDataCollector.prototype = {
     }
   },
 
+  collectFloorNumber: function(floorNumber){
+    this.floor = floorNumber || parseInt(prompt("Enter Floor Number:"));
+  },
+
   saveToServer: function _saveToServer()
   {
-    if (this.landfillWeight && this.recycleWeight && this.floorWeight) {
+    if (this.landfillWeight && this.recycleWeight && this.floor) {
       document.location = "/savedata.html?recycle=" +
         this.recycleWeight +
         "&landfill=" +
         this.landfillWeight +
         "&floor=" +
-        this.floorWeight;
+        this.floor;
     }
     else {
       error("Cannot save, not all data was collected");
