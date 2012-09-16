@@ -4,36 +4,27 @@ RecyclingDataCollector.prototype = {
   collectWeight: function _collectWeight(type, weight, max)
   {
     var err;
-    if (!weight || !type) {
-      error("Weight and Type are required args");
-    }
-     var result;
-     switch(type) {
-       case "recycle":
-       result = prompt("Please enter recycling weight:");
-       break;
-       default:
-       error("Sorry, data collection type is unknown");
-       return;
-     }
-    result = parseFloat(weight);
-    if (isNaN(result)) {
+    type = type || "recycle"; // default value "recycle"
+    weight = weight || parseFloat(prompt("Please enter recycling weight:")); //prompt for weight if not passed in
+
+    if (isNaN(weight)) { //verify is number
       error("Please enter a number");
     }
-    if (max) {
-      if (!(result < max)) {
+
+    if (max) {//verify less than max
+      if (!(weight < max)) {
         error(type + " value is greater than maximum: " + max);
       }
     }
     switch (type) {
     case "recycle":
-      this.recycleWeight = result;
+      this.recycleWeight = weight;
       break;
     case "landfill":
-      this.landfillWeight = result;
+      this.landfillWeight = weight;
       break;
     case "floor":
-      this.floor = parseInt(result);
+      this.floor = parseInt(weight);
       break;
     default:
       error("Cannot save result, data collection type is unknown");
