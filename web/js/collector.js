@@ -16,6 +16,7 @@ RecyclingDataCollector.prototype = {
         error(type + " value is greater than maximum: " + max);
       }
     }
+
     switch (type) {
     case "recycle":
       this.recycleWeight = weight;
@@ -30,8 +31,6 @@ RecyclingDataCollector.prototype = {
       error("Cannot save result, data collection type is unknown");
       return;
     }
-    // then you want to send the data off to the server...
-    this.saveToServer();
   },
 
   saveToServer: function _saveToServer()
@@ -58,4 +57,7 @@ function error(msg)
 }
 
 var collector = new RecyclingDataCollector();
-collector.collectWeight();
+collector.collectWeight("recycle");
+collector.collectWeight("landfill");
+collector.collectWeight("floor");
+collector.saveToServer();
