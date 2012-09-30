@@ -7,17 +7,34 @@
   <meta name="viewport" 
         content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/style.css"/>
+  <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/collector.js"></script>
 </head>
 <body>
 
-<p>Recycling Collector</p>
-  <script type="text/javascript">
-    var collector = new RecyclingDataCollector();
-    collector.collectWeight("recycle");
-    collector.collectWeight("landfill");
-    collector.collectFloorNumber();
-    collector.saveToServer();
-  </script>
+<h1>Recycling Collector</h1>
+<div id="collector-main">
+  <p>
+    <label for="floor">Floor:</label>  
+    <input type="text" maxlength="2" id="floor"/>
+  </p>
+  <p>
+    <label for="recycle">Recycling Weight:</label>  
+    <input type="text" maxlength="4" id="recycle"/>
+  </p>
+  <p>
+    <label for="landfill">Landfill Weight:</label>  
+    <input type="text" maxlength="4" id="landfill"/>
+  </p>
+  <button id="collect-btn">Save Weights</button>
+</div>
+
+<div id="confirm">
+<p>
+  <button id="send-btn">Correct</button> 
+  <button id="edit-btn">Edit Values</button> 
+</p>
+</div>
+
 </body>
 </html>

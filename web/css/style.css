@@ -167,14 +167,6 @@ width:200px;
 float:left;
 }
 
-H1 {
-font-size:1em;
-font-weight:500;
-margin-top:0;
-margin-bottom:-0.2em;
-color:#d624b7;
-}
-
 .H1tops {
 font-size:1em;
 font-weight:500;
@@ -609,3 +601,5 @@ overflow: hidden; }
 position:absolute;
 z-index:1;
 }
+
+#confirm { display: none; }
